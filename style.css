@@ -1,97 +1,218 @@
-/* Base Styles */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* === Global Styles === */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
   background-color: #f8f9fa;
+  color: #333;
+  position: relative;
 }
 
-header {
-  background: #003049;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
+img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
+h1, h2, h3 {
+  color: #003049;
+  margin-bottom: 1rem;
 }
 
 section {
-  padding: 2rem 5%;
-  background: #ffffff;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
+  padding: 4rem 8%;
 }
 
-h2, h3 {
-  color: #003049;
+/* === Header & Navigation === */
+header {
+  background-color: #003049;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  background-color: #002437;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fcbf49;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.hero h2 {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+/* === Content Sections === */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
 }
 
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Team Section === */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  flex: 1 1 250px;
+  text-align: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+/* === Blog Section === */
+article {
+  background: #ffffff;
+  padding: 1rem;
+  border-left: 4px solid #003049;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+article a {
+  text-decoration: none;
+  color: #003049;
+  font-weight: bold;
+}
+
+article a:hover {
+  color: #d62828;
+}
+
+/* === Contact Section === */
+#contact ul {
+  margin-top: 1rem;
+}
+
+#contact a {
+  color: #003049;
+  text-decoration: underline;
+}
+
+/* === Footer === */
 footer {
-  background: #003049;
+  background-color: #002437;
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   font-size: 0.9rem;
 }
 
 footer nav a {
-  color: #ffc107;
+  color: #fcbf49;
   text-decoration: none;
+  margin: 0 0.5rem;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem 0;
+footer nav a:hover {
+  text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-} 
-
-/* Buttons (optional for future use) */
-button, .btn {
-  background-color: #0077b6;
-  color: white;
-  padding: 0.6rem 1.2rem;
+/* === Scroll-to-Top Button === */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #003049;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50%;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
-button:hover, .btn:hover {
-  background-color: #023e8a;
+#scrollTopBtn:hover {
+  background-color: #d62828;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .team {
+    flex-direction: column;
+  }
 }
