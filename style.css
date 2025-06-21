@@ -72,15 +72,49 @@ header {
   color: #fcbf49;
 }
 
-.hero {
-  text-align: center;
-  padding: 2rem 0;
+/* === Hero Collage === */
+.hero-collage {
+  display: grid;
+  grid-template-areas:
+    "hero hero hero"
+    "box1 box2 box3";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem 8%;
+  background-color: #fff;
 }
 
-.hero h2 {
-  margin-top: 1rem;
-  font-size: 1.6rem;
+.hero-collage .hero-box {
+  grid-area: hero;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  height: 350px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  position: relative;
 }
+
+.hero-collage .small-box {
+  background-color: #fcbf49;
+  color: #003049;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-collage .small-box:hover {
+  transform: translateY(-5px);
+}
+
+.hero-collage .box1 { grid-area: box1; }
+.hero-collage .box2 { grid-area: box2; }
+.hero-collage .box3 { grid-area: box3; }
 
 /* === Content Sections === */
 .content {
@@ -215,4 +249,59 @@ footer nav a:hover {
   .team {
     flex-direction: column;
   }
+
+  .hero-collage {
+    grid-template-areas:
+      "hero"
+      "box1"
+      "box2"
+      "box3";
+    grid-template-columns: 1fr;
+  }
+}
+.hero-box {
+  position: relative;
+  background: url('images/hero.jpg') center/cover no-repeat;
+  height: 350px;
+  border-radius: 12px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero-overlay h1 {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.small-box i {
+  color: #003049;
+  margin-bottom: 0.5rem;
+}
+
+.small-box .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #003049;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.small-box .btn:hover {
+  background-color: #d62828;
 }
